@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Lab_2
 {
@@ -15,13 +15,29 @@ namespace Lab_2
             get { return _name; }
             set { _name = value; }
         }
+        List<Person> personslist = new List<Person>();
+        
         public Classroom(string name, Person[] persons)
-        { 
-
+            
+        {
+            _name = name;
+            personslist.AddRange(persons);
+            
 
         }
-
-        List<Person>persons = new List<Person>();
+        
+        public override string ToString()
+        {
+            Console.WriteLine($"Classroom: { _name}");
+            Console.WriteLine();
+            foreach (var item in personslist)
+            {
+                Console.WriteLine(item);
+                //Console.WriteLine("xD");
+            }
+            return "";
+        }
+        
 
     }
 }
